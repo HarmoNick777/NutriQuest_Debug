@@ -9435,7 +9435,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 260500458233600348, guid: 374bfb61e2498ee12a9e8a0fafec16b2, type: 3}
       propertyPath: _jumpForce
-      value: 15
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 278587884108277482, guid: 374bfb61e2498ee12a9e8a0fafec16b2, type: 3}
       propertyPath: _detectorLength
@@ -9443,11 +9443,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2056265917493319838, guid: 374bfb61e2498ee12a9e8a0fafec16b2, type: 3}
       propertyPath: m_Center.y
-      value: 0
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3027444774220466944, guid: 374bfb61e2498ee12a9e8a0fafec16b2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4282001068101715609, guid: 374bfb61e2498ee12a9e8a0fafec16b2, type: 3}
       propertyPath: _gravityMultiplier
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4366386939320626828, guid: 374bfb61e2498ee12a9e8a0fafec16b2, type: 3}
       propertyPath: m_Name
@@ -9479,7 +9483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5068584207528892769, guid: 374bfb61e2498ee12a9e8a0fafec16b2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5068584207528892769, guid: 374bfb61e2498ee12a9e8a0fafec16b2, type: 3}
       propertyPath: m_LocalPosition.z

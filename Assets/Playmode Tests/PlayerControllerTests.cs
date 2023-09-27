@@ -1,12 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using NSubstitute;
 using NUnit.Framework;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 public class PlayerControllerTests
 {
+    [Test]
+    public void LayerMaskIsProperlySet()
+    {
+        GameObject go = GameObject.Find("Ground");
+        Assert.AreEqual(LayerMask.LayerToName(go.layer), "Ground");
+    }
+    
     [Test]
     public void PlayerControllerCanCallJumpTest()
     {
