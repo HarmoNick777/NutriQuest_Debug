@@ -2,7 +2,7 @@ using System;
 
 public interface IGrounded
 {
-    bool Grounded { get; }
+    bool isGrounded { get; }
 
     event Action OnGrounded;
 }

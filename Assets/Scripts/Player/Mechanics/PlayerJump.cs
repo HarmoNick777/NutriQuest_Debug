@@ -22,7 +22,7 @@ public class PlayerJump : MonoBehaviour, IJump
     /// </summary>
     public void Jump()
     {
-        if (_grounded.Grounded)
+        if (_grounded.isGrounded)
         {
             _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
         }

@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour, IMove
 
     [Header("Parameters")]
     [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _gravityMultiplier = 0.5f;
 
     [Header("Animations")]
     [SerializeField] private PlayerAnimations _animations;
@@ -28,8 +29,8 @@ public class PlayerMovement : MonoBehaviour, IMove
 
     private void FixedUpdate()
     {
-        _rb.velocity = new Vector3(_movement.x * _speed, 0, _movement.y * _speed);
-        _rb.position = new Vector3(_rb.position.x, 1, _rb.position.z);
+        _rb.velocity = new Vector3(_movement.x * _speed, _rb.velocity.y, _movement.y * _speed);
+        _rb.position = new Vector3(_rb.position.x, _rb.position.y + Physics.gravity.y * _gravityMultiplier * Time.deltaTime, _rb.position.z);
         _animations.Move(_movement.sqrMagnitude);
 
         // Rotate the player to the direction of _movement
@@ -37,5 +38,6 @@ public class PlayerMovement : MonoBehaviour, IMove
         {
             _rb.rotation = Quaternion.LookRotation(new Vector3(_movement.x, 0f, _movement.y));
         }
+        Debug.Log(_rb.position.y);
     }
 }

@@ -17,7 +17,7 @@ public class PlayerGroundDetector : MonoBehaviour, IGrounded
     [SerializeField] private PlayerAnimations _animations;
 
     // Properties for the interfaces
-    public bool Grounded { get; private set; }
+    public bool isGrounded { get; private set; }
 
     public event Action OnGrounded;
 
@@ -25,19 +25,20 @@ public class PlayerGroundDetector : MonoBehaviour, IGrounded
 
     private void FixedUpdate()
     {
-        _lastGroundedStatus = Grounded;
+        _lastGroundedStatus = isGrounded;
 
         // Check if the player is grounded and updates the grounded status accordingly
-        Grounded = Physics.CheckSphere(_groundCheck.position, _groundCheckRadius, _groundLayer);
+        isGrounded = Physics.CheckSphere(_groundCheck.position, _groundCheckRadius, _groundLayer);
+        Debug.Log(isGrounded);
 
         // Update the animations if the grounded status changed
-        if (_lastGroundedStatus != Grounded)
+        if (_lastGroundedStatus != isGrounded)
         {
-            _animations.SetGrounded(Grounded);
+            _animations.SetGrounded(isGrounded);
         }
 
         // Invoke the event if the grounded status changed from false to true
-        if (Grounded && !_lastGroundedStatus)
+        if (isGrounded && !_lastGroundedStatus)
         {
             OnGrounded?.Invoke();
         }
