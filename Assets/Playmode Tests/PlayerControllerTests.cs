@@ -2,18 +2,11 @@ using NSubstitute;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 public class PlayerControllerTests
 {
-    [SetUp]
-    public void Setup()
-    {
-        SceneManager.LoadScene("Assets/Scenes/GameScene.unity");
-    }
-
     [Test]
     public void PlayerControllerCanCallJump()
     {
