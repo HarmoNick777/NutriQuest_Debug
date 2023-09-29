@@ -27,4 +27,9 @@ public class PlayerJump : MonoBehaviour, IJump
             _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
         }
     }
+
+    public float GetJumpForce()
+    {
+        return _jumpForce;
+    }
 }

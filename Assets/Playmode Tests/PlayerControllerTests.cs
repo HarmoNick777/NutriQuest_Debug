@@ -2,11 +2,18 @@ using NSubstitute;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 public class PlayerControllerTests
 {
+    [SetUp]
+    public void Setup()
+    {
+        EditorSceneManager.LoadScene("Assets/Scenes/GameScene.unity");
+    }
+    
     [Test]
     public void LayerMaskIsProperlySet()
     {
@@ -15,7 +22,7 @@ public class PlayerControllerTests
     }
     
     [Test]
-    public void PlayerControllerCanCallJumpTest()
+    public void PlayerControllerCanCallJump()
     {
         GameObject go = new GameObject();
         PlayerController controller = go.AddComponent<PlayerController>();

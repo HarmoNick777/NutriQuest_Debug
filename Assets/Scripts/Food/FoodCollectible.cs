@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Handles the collectible mechanic of foods.
 /// </summary>
-public class FoodCollectible : MonoBehaviour
+public class FoodCollectible : MonoBehaviour, ICollect
 {
     [SerializeField, Label("Score Effect")] private SerializableInterface<IExecute> _scoreEffectSerialized;
 

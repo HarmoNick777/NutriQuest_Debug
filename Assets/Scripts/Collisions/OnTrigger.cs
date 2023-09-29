@@ -45,4 +45,9 @@ public class OnTrigger : MonoBehaviour
 
         _onTriggerExit.Invoke(other);
     }
+
+    public UnityEvent<Collider> GetOnTriggerEnter()
+    {
+        return _onTriggerEnter;
+    }
 }

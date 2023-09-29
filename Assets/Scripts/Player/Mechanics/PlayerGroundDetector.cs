@@ -29,7 +29,6 @@ public class PlayerGroundDetector : MonoBehaviour, IGrounded
 
         // Check if the player is grounded and updates the grounded status accordingly
         isGrounded = Physics.CheckSphere(_groundCheck.position, _groundCheckRadius, _groundLayer);
-        Debug.Log(isGrounded);
 
         // Update the animations if the grounded status changed
         if (_lastGroundedStatus != isGrounded)
