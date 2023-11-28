@@ -18,6 +18,12 @@ public class PlayerAnimations : MonoBehaviour
     /// Handles the player's movement animation based on the given speed.
     /// </summary>
     /// <param name="speed">the speed at which the player is moving</param>
+    
+    public void Initialize(Animator animator)
+    {
+        _animator = animator;
+    }
+    
     public void Move(float speed)
     {
         _animator.SetFloat(_speedParam, speed);

@@ -17,6 +17,12 @@ public class PlayerController : MonoBehaviour
     private IMove _movement => _movementSerialized.Value;
     private IJump _jump => _jumpSerialized.Value;
 
+    public void Initialize(IMove move)
+    {
+        _movementSerialized = new SerializableInterface<IMove>();
+        _movementSerialized.Value = move;
+    }
+
     public void Initialize(IJump jump)
     {
         _jumpSerialized = new SerializableInterface<IJump>();

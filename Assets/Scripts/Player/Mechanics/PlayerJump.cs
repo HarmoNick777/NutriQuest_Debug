@@ -28,6 +28,13 @@ public class PlayerJump : MonoBehaviour, IJump
         }
     }
 
+    public void Initialize(Rigidbody rb, IGrounded grounded)
+    {
+        _rb = rb;
+        _groundedSerialized = new SerializableInterface<IGrounded>();
+        _groundedSerialized.Value = grounded;
+    }
+
     public float GetJumpForce()
     {
         return _jumpForce;
