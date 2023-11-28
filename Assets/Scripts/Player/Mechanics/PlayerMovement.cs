@@ -34,10 +34,7 @@ public class PlayerMovement : MonoBehaviour, IMove
     private void FixedUpdate()
     {
         _rb.velocity = new Vector3(_movement.x * _speed, _rb.velocity.y, _movement.y * _speed);
-        if(_animations != null)
-        {
-            _animations.Move(_movement.sqrMagnitude);
-        }
+        _animations.Move(_movement.sqrMagnitude);
 
         // Rotate the player to the direction of _movement
         if (_movement != Vector2.zero)
