@@ -8,6 +8,7 @@ public class PlayerTests
 {
     GameObject _player;
     Rigidbody _rb;
+    IMove _move;
     IJump _jump;
     IGrounded _grounded;
 
@@ -16,6 +17,7 @@ public class PlayerTests
     {
         _player = new GameObject();
         _rb = _player.AddComponent<Rigidbody>();
+        _move = Substitute.For<IMove>();
         _jump = Substitute.For<IJump>();
         _grounded = Substitute.For<IGrounded>();
     }
@@ -30,7 +32,7 @@ public class PlayerTests
     public void PlayerControllerCanCallJump()
     {
         PlayerController controller = _player.AddComponent<PlayerController>();
-        controller.Initialize(_jump);
+        controller.Initialize(_move, _jump);
         controller.JumpControlActivated();
         _jump.Received().Jump();
     }
